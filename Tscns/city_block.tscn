@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c88c7kix18x8p"]
+
+[ext_resource type="Script" path="res://Scripts/CityBlock.gd" id="1_mf73j"]
+[ext_resource type="Texture2D" uid="uid://sh6spdnifd8b" path="res://Sprites/tiles.png" id="2_xcvtq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xol4e"]
+size = Vector2(64, 64)
+
+[node name="CityBlock" type="Area2D"]
+script = ExtResource("1_mf73j")
+
+[node name="Tile" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_xcvtq")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xol4e")

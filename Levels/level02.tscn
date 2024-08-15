@@ -1,0 +1,220 @@
+[gd_scene load_steps=7 format=3 uid="uid://beytfade8uqa0"]
+
+[ext_resource type="Script" path="res://Scripts/level0.gd" id="1_nitb3"]
+[ext_resource type="Texture2D" uid="uid://35nv6kagv3hm" path="res://Sprites/waves.png" id="2_l0ist"]
+[ext_resource type="PackedScene" uid="uid://bootpj5l84dy2" path="res://Tscns/player.tscn" id="3_uf3cd"]
+[ext_resource type="PackedScene" uid="uid://c88c7kix18x8p" path="res://Tscns/city_block.tscn" id="4_lto5n"]
+[ext_resource type="PackedScene" uid="uid://dws8ccao22fsv" path="res://Tscns/bad_wave.tscn" id="5_31101"]
+[ext_resource type="AudioStream" uid="uid://befh0smjulv6w" path="res://Sounds/Niveles.ogg" id="6_gei13"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nitb3")
+thisLevel = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_l0ist")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.21, 0, 1080, 1920)
+
+[node name="Player" parent="." instance=ExtResource("3_uf3cd")]
+unique_name_in_owner = true
+position = Vector2(480, 960)
+metadata/_edit_group_ = true
+
+[node name="CityBlocks" type="Node2D" parent="."]
+
+[node name="CityBlock" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(480, 1216)
+
+[node name="CityBlock2" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(480, 1088)
+
+[node name="CityBlock3" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(736, 1216)
+
+[node name="CityBlock5" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(480, 1344)
+
+[node name="CityBlock6" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(352, 1344)
+
+[node name="CityBlock15" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(224, 1344)
+
+[node name="CityBlock16" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(736, 1344)
+
+[node name="CityBlock7" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(224, 1216)
+
+[node name="CityBlock8" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(224, 1088)
+
+[node name="CityBlock10" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(224, 960)
+
+[node name="CityBlock11" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(608, 832)
+
+[node name="CityBlock17" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(352, 832)
+
+[node name="CityBlock18" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(224, 832)
+
+[node name="CityBlock19" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(480, 832)
+
+[node name="CityBlock13" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(736, 1088)
+
+[node name="CityBlock20" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(608, 1088)
+
+[node name="CityBlock21" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(608, 960)
+
+[node name="CityBlock14" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(736, 960)
+
+[node name="CityBlock23" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(736, 832)
+
+[node name="CityBlock4" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(864, 1216)
+
+[node name="CityBlock25" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(864, 1344)
+
+[node name="CityBlock26" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(864, 1088)
+
+[node name="CityBlock27" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(864, 960)
+
+[node name="CityBlock28" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(864, 832)
+
+[node name="CityBlock29" parent="CityBlocks" instance=ExtResource("4_lto5n")]
+position = Vector2(864, 704)
+
+[node name="BadWaves" type="Node2D" parent="."]
+
+[node name="BadWave" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(864, 576)
+
+[node name="BadWave2" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(352, 1472)
+
+[node name="BadWave7" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(224, 1472)
+
+[node name="BadWave3" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(480, 1472)
+
+[node name="BadWave4" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(608, 1472)
+
+[node name="BadWave5" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(736, 1472)
+
+[node name="BadWave15" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(736, 704)
+
+[node name="BadWave31" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(224, 704)
+
+[node name="BadWave21" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(352, 704)
+
+[node name="BadWave28" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(480, 704)
+
+[node name="BadWave29" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(608, 704)
+
+[node name="BadWave30" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(352, 960)
+
+[node name="BadWave16" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(96, 832)
+
+[node name="BadWave17" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(96, 960)
+
+[node name="BadWave18" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(96, 1088)
+
+[node name="BadWave32" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(352, 1216)
+
+[node name="BadWave19" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(96, 1216)
+
+[node name="BadWave33" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(608, 1344)
+
+[node name="BadWave20" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(96, 1344)
+
+[node name="BadWave6" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(864, 1472)
+
+[node name="BadWave23" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(992, 832)
+
+[node name="BadWave36" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(992, 704)
+
+[node name="BadWave24" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(992, 960)
+
+[node name="BadWave34" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(352, 1088)
+
+[node name="BadWave35" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(608, 1216)
+
+[node name="BadWave25" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(992, 1088)
+
+[node name="BadWave26" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(992, 1216)
+
+[node name="BadWave27" parent="BadWaves" instance=ExtResource("5_31101")]
+position = Vector2(992, 1344)
+
+[node name="Levels" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gei13")
+autoplay = true
+
+[connection signal="one_click" from="Player" to="." method="_on_player_one_click"]
+[connection signal="one_tick" from="Player" to="." method="_on_player_one_tick"]
+[connection signal="area_entered" from="CityBlocks/CityBlock" to="CityBlocks/CityBlock" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock2" to="CityBlocks/CityBlock2" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock3" to="CityBlocks/CityBlock3" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock5" to="CityBlocks/CityBlock5" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock6" to="CityBlocks/CityBlock6" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock15" to="CityBlocks/CityBlock15" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock16" to="CityBlocks/CityBlock16" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock7" to="CityBlocks/CityBlock7" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock8" to="CityBlocks/CityBlock8" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock10" to="CityBlocks/CityBlock10" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock11" to="CityBlocks/CityBlock11" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock17" to="CityBlocks/CityBlock17" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock18" to="CityBlocks/CityBlock18" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock19" to="CityBlocks/CityBlock19" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock13" to="CityBlocks/CityBlock13" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock20" to="CityBlocks/CityBlock20" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock21" to="CityBlocks/CityBlock21" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock14" to="CityBlocks/CityBlock14" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock23" to="CityBlocks/CityBlock23" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock4" to="CityBlocks/CityBlock4" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock25" to="CityBlocks/CityBlock25" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock26" to="CityBlocks/CityBlock26" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock27" to="CityBlocks/CityBlock27" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock28" to="CityBlocks/CityBlock28" method="_on_area_entered"]
+[connection signal="area_entered" from="CityBlocks/CityBlock29" to="CityBlocks/CityBlock29" method="_on_area_entered"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bootpj5l84dy2"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_vab8h"]
+[ext_resource type="Texture2D" uid="uid://dofa26vfg4vsp" path="res://Sprites/zilla 1.png" id="2_svdcu"]
+[ext_resource type="AudioStream" uid="uid://iawamlkpbde5" path="res://Sounds/click.ogg" id="3_clmit"]
+[ext_resource type="AudioStream" uid="uid://cwpxae3mu7a64" path="res://Sounds/Stomp.ogg" id="4_ev05e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fww5"]
+size = Vector2(64, 64)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_vab8h")
+
+[node name="ColPlayer" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3fww5")
+
+[node name="Zilla1" type="Sprite2D" parent="."]
+texture = ExtResource("2_svdcu")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_clmit")
+
+[node name="Stomp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ev05e")
+pitch_scale = 1.72
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

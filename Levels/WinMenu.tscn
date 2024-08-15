@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://ymv8dn3keeia"]
+
+[ext_resource type="Texture2D" uid="uid://d1xd06xkj8rgm" path="res://Sprites/winscreenbackgroud.png" id="1_v8htp"]
+[ext_resource type="Script" path="res://Scripts/WinMenu.gd" id="2_b1r4n"]
+[ext_resource type="Texture2D" uid="uid://d235r6hkw7ndj" path="res://Sprites/menu.png" id="4_5mtrh"]
+[ext_resource type="Texture2D" uid="uid://c2rsmhmwv5wh7" path="res://Sprites/Exit.png" id="6_p4dr8"]
+[ext_resource type="Texture2D" uid="uid://sh5xecujm0ti" path="res://Sprites/next.png" id="6_wuidm"]
+[ext_resource type="AudioStream" uid="uid://cabu6tfjpxbav" path="res://Sounds/Tutorial.ogg" id="7_id6yg"]
+[ext_resource type="Texture2D" uid="uid://cqbub2ssfktr7" path="res://Sprites/like.png" id="8_l00dp"]
+[ext_resource type="PackedScene" uid="uid://l02tk6vj5bgf" path="res://Tscns/Dial.tscn" id="8_l6i6p"]
+
+[node name="WinMenu" type="Sprite2D"]
+position = Vector2(540, 960)
+texture = ExtResource("1_v8htp")
+script = ExtResource("2_b1r4n")
+deselectColor = Color(0.14902, 0.0823529, 0.0941176, 1)
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(-252, 384)
+texture = ExtResource("6_p4dr8")
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(260, 384)
+texture = ExtResource("4_5mtrh")
+
+[node name="Like" type="Sprite2D" parent="."]
+position = Vector2(4, 640)
+texture = ExtResource("8_l00dp")
+
+[node name="Next" type="Sprite2D" parent="."]
+position = Vector2(4, 128)
+texture = ExtResource("6_wuidm")
+
+[node name="Menuwin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_id6yg")
+autoplay = true
+
+[node name="Dial" parent="." instance=ExtResource("8_l6i6p")]
+
+[connection signal="one_tick" from="Dial" to="." method="_on_dial_one_tick"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0hcfqcd5objo"]
+
+[ext_resource type="Texture2D" uid="uid://c87iankoknjav" path="res://Sprites/menubackgroud.png" id="1_d6w4e"]
+[ext_resource type="Script" path="res://Scripts/menubackgroud.gd" id="2_367df"]
+[ext_resource type="Texture2D" uid="uid://dd7ysyete0fgj" path="res://Sprites/dial.png" id="2_d5onu"]
+[ext_resource type="Script" path="res://Scripts/Dial.gd" id="3_b2fn2"]
+[ext_resource type="Texture2D" uid="uid://c2rsmhmwv5wh7" path="res://Sprites/Exit.png" id="4_2fnyt"]
+[ext_resource type="AudioStream" uid="uid://iawamlkpbde5" path="res://Sounds/click.ogg" id="4_vbvlu"]
+[ext_resource type="Texture2D" uid="uid://dgke4mfdld3sd" path="res://Sprites/help.png" id="5_ouehp"]
+[ext_resource type="Texture2D" uid="uid://cqbub2ssfktr7" path="res://Sprites/like.png" id="6_sajae"]
+[ext_resource type="Texture2D" uid="uid://cbdn0otseuet7" path="res://Sprites/play.png" id="7_r1h7t"]
+
+[node name="Menubackgroud" type="Sprite2D"]
+position = Vector2(540, 960)
+texture = ExtResource("1_d6w4e")
+script = ExtResource("2_367df")
+deselectColor = Color(0.14902, 0.0823529, 0.0941176, 1)
+
+[node name="Dial" type="Sprite2D" parent="."]
+position = Vector2(4, 384)
+texture = ExtResource("2_d5onu")
+script = ExtResource("3_b2fn2")
+
+[node name="Timer" type="Timer" parent="Dial"]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Dial"]
+stream = ExtResource("4_vbvlu")
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(-252, 384)
+texture = ExtResource("4_2fnyt")
+
+[node name="Help" type="Sprite2D" parent="."]
+position = Vector2(260, 384)
+texture = ExtResource("5_ouehp")
+
+[node name="Like" type="Sprite2D" parent="."]
+position = Vector2(4, 640)
+texture = ExtResource("6_sajae")
+
+[node name="Play" type="Sprite2D" parent="."]
+position = Vector2(4, 128)
+texture = ExtResource("7_r1h7t")
+
+[connection signal="one_tick" from="Dial" to="." method="_on_dial_one_tick"]
+[connection signal="timeout" from="Dial/Timer" to="Dial" method="_on_timer_timeout"]

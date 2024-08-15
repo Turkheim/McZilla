@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://l02tk6vj5bgf"]
+
+[ext_resource type="Texture2D" uid="uid://dd7ysyete0fgj" path="res://Sprites/dial.png" id="1_nhk30"]
+[ext_resource type="Script" path="res://Scripts/Dial.gd" id="2_bvkei"]
+[ext_resource type="AudioStream" uid="uid://iawamlkpbde5" path="res://Sounds/click.ogg" id="3_eomgn"]
+
+[node name="Dial" type="Sprite2D"]
+position = Vector2(4, 384)
+texture = ExtResource("1_nhk30")
+script = ExtResource("2_bvkei")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_eomgn")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
