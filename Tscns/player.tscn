@@ -20,6 +20,9 @@ texture = ExtResource("2_svdcu")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="CanClick" type="Timer" parent="."]
+wait_time = 0.1
+
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_clmit")
 
@@ -28,3 +31,4 @@ stream = ExtResource("4_ev05e")
 pitch_scale = 1.72
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CanClick" to="." method="_on_can_click_timeout"]
