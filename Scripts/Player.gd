@@ -3,8 +3,9 @@ extends Area2D
 var badWave: PackedScene = preload("res://Tscns/bad_wave.tscn")
 var resolutionTile = 128
 @export var countdown = 14
-var canClick = false
+
 signal one_click
+@onready var can_click = $canClick
 
 signal one_tick
 
@@ -12,7 +13,7 @@ func _ready():
 	#this starts the rotation timer
 	$Timer.start()
 	countdown = $"../CityBlocks".get_child_count()
-	canClick = true
+	
 func _on_timer_timeout():
 
 	rotation_degrees = rotation_degrees + 90
@@ -23,10 +24,10 @@ func _on_timer_timeout():
 	$Click.play()
 #this moves the character every click
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("oneClick"):
-		canClick = false
+	if Input.is_action_just_pressed("oneClick") and can_click.is_stopped():
+		can_click.start()
 		one_click.emit()
-		$CanClick.start()
+		
 		#this instantiate a badwave tile
 		var newTile = badWave.instantiate()
 		add_sibling(newTile)
@@ -36,7 +37,3 @@ func _unhandled_input(event):
 		move_local_y(-resolutionTile)
 
 		$Stomp.play()
-
-
-func _on_can_click_timeout():
-	canClick = false
